@@ -16,7 +16,7 @@ var messages = [{
     nickname: 'Bot'
 }];
 io.on('connection', function (socket) {
-    console.log("el nodo con IP: " + socket.handshake.address + " se ha conectado");
+    //console.log("el nodo con IP: " + socket.handshake.address + " se ha conectado");
 
     socket.emit('messages', messages);
 
