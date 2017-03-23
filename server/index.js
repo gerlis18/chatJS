@@ -3,7 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-
+app.set('port', process.env.PORT || 3000);
 app.use(express.static('client'));
 
 app.get('/hola-mundo', function (req, res) {
@@ -19,6 +19,12 @@ io.on('connection', function (socket) {
     console.log("el nodo con IP: " + socket.handshake.address + " se ha conectado");
 
     socket.emit('messages', messages);
+
+    socket.on('add-message', function (data) {
+        messages.push(data);
+
+        io.sockets.emit('messages', messages);
+    });
 });
 
 server.listen(app.get('port'), function () {
