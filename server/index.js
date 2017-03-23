@@ -21,6 +21,6 @@ io.on('connection', function (socket) {
     socket.emit('messages', messages);
 });
 
-server.listen(6677, function () {
-    console.log('El servidor está funcionando');
+server.listen(app.get('port'), function () {
+    console.log('El servidor está funcionando y esta corriendo en el puerto: '+app.get('port'));
 });
