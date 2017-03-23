@@ -29,8 +29,8 @@
     <h1>Chat con socket.io y Node.js</h1>
     <div id="messages">
     </div>
-    <form onsubmit="return addMessage(this);">
-        <input id="nickname" type="text" placeholder="Nick" />
+    <form id="miForm" onsubmit="return addMessage(this);">
+        <input name="nickname" id="nickname" type="text" placeholder="Nick" />
         <textarea id="text" placeholder="Mensaje"></textarea>
         <input type="submit" value="Enviar" />
     </form>

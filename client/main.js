@@ -1,6 +1,4 @@
-﻿var express = require('express');
-var app = express();
-var socket = io.connect('http://pruebadelchat.azurewebsites.net:' + app.get('port'), { 'forceNew': true });
+﻿var socket = io.connect(/*'http://pruebadelchat.azurewebsites.net:'*/'http://10.75.11.132:3000', { 'forceNew': true });
 
 socket.on('messages', function (data) {
     console.log(data);
@@ -21,6 +19,8 @@ function render(data) {
     div_msgs.innerHTML = html;
     div_msgs.scrollTop = div_msgs.scrollHeight;
 
+    var nickname = document.getElementById('text');
+    nickname.value = "";
 }
 
 function addMessage(e) {
