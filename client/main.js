@@ -1,4 +1,4 @@
-﻿var socket = io.connect('http://pruebadelchat.azurewebsites.net', { 'forceNew': true });
+﻿var socket = io.connect('http://pruebadelchat.azurewebsites.net:'+process.env.PORT, { 'forceNew': true });
 
 socket.on('messages', function (data) {
     console.log(data);
