@@ -1,4 +1,4 @@
-﻿var socket = io.connect(/*'http://pruebadelchat.azurewebsites.net:'*/'http://10.75.11.132:3000', { 'forceNew': true });
+﻿var socket = io.connect('http://pruebadelchat.azurewebsites.net:', { 'forceNew': true });
 
 socket.on('messages', function (data) {
     console.log(data);
